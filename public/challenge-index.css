@@ -1,0 +1,351 @@
+/* Add to public/challenge-page.css */
+
+/* --- GLOBAL BACKGROUND FIX --- */
+html, body {
+       height: 100%;
+  margin: 0;
+   padding: 0;
+    /* FIX: Set the body background to the uniform light color */ 
+    background-color: #f7f7f7; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.course-page-container {
+    /* Ensure the main container is transparent to show the body color */
+    background-color: transparent; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.challenge {
+  color: black;
+  font-weight: bold;
+}
+
+
+.chatbot-link {
+    padding: 5px 14px;
+  border-radius: 20px;
+  background-color: rgba(63, 81, 181, 0.1); /* soft bluish tint */
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style the text inside the link (or the <li> text itself) */
+.chatbot-link a {
+  color: #3f51b5 !important; /* elegant blue tone */
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Add a subtle interactive effect */
+.chatbot-link:hover {
+   background-color: #3f51b5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.25);
+}
+
+.chatbot-link:hover a {
+  color: white !important;
+}
+
+
+/* --- DROPDOWN FIXES --- */
+
+/* Base positioning for the trigger element */
+.nav-links .dropdown {
+  position: relative;
+  padding: 0 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  /* FIX 1: Hide the menu by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* Positioning relative to the Programs link */
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  /* Styling */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+/* FIX 2: Show the menu on hover */
+.nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+  transition: background 0.2s ease;
+  font-weight: bold;
+}
+
+.dropdown-menu li:hover {
+  background: #f3f3f3;
+  color: #00b894;
+}
+
+
+.course-card {
+    border-radius: 15px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden; 
+    min-height: 250px;
+    background-color: #ffffff;
+}
+
+/* Overrides for Challenge Index Page */
+.challenge-header {
+    /* FIX: Remove top padding and center the inner content structure */
+    padding: 0 40px 0; /* Remove top padding (20px) */
+    
+    /* We still need the content to be centered and constrained */
+    max-width: 1300px;
+    margin: 0 auto;
+    
+    /* If you want a white bar behind the title, you would add: 
+       background-color: white; 
+       If not, keep it transparent. */
+}
+.challenge-card-list {
+    display: grid;
+    /* Uses the grid template from the main course page */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 25px;
+    padding: 20px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Ensure the card styles from HomePage.css are inherited/copied */
+
+.course-page-container {
+    padding: 20px 0 60px 0;
+    max-width: 1300px; 
+    margin: 0 auto;
+    background-color: #ffffff; 
+}
+
+.main-page-title {
+    font-size: 3em;
+    font-weight: 800;
+    color: #222;
+    padding: 20px 40px; 
+    margin-bottom: 30px;
+}
+
+.course-topic-section {
+    padding: 0 40px; 
+    margin-bottom: 50px;
+}
+
+.topic-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 25px;
+    padding-left: 0;
+    border-bottom: 2px solid #f0f0f0; 
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.topic-separator {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+.course-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.course-card .course-subtext {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Specific background colors to match the image */
+.ratio-bg {
+    background-color: #e5f5e5; /* Light Green */
+}
+.numbers-bg {
+    background-color: #ebe5ff; /* Light Lavender/Blue */
+}
+.average-bg {
+    background-color: #fff9e0; /* Light Yellow/Cream */
+}
+
+/* Specific styling for the elements inside the challenge cards */
+.difficulty-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.challenge-card-list .course-icon {
+    /* Make the icon container larger and higher to hold the image */
+    height: 140px; 
+    margin-bottom: 15px;
+    /* Ensure the image is positioned well within the space */
+}
+.challenge-card-list .course-icon img {
+    max-height: 80%;
+        max-width: 80%;
+    /* No need for fixed width/height if we rely on contain */
+    width: auto; 
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Renaming classes for specificity vs. existing course card styling */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+.card-status {
+    color: #28a745; /* Green dot color */
+}
+.card-status .status-dot {
+    background-color: #28a745; 
+}
+
+/* FIX: Image Container (Controls the area the image uses and centers content) */
+.course-icon {
+    width: 100%; 
+    height: 120px; /* Kept the reduced height */
+    
+    /* 🔑 THE CENTERING FIXES: */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    
+    margin-bottom: 10px; 
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.percentage-bg {
+    background-color: #e0f7fa; /* Light Cyan */
+}
+.profit-loss-bg {
+    background-color: #ffe0b2; /* Light Orange */
+}
+.mixture-bg {
+    background-color: #fce4ec; /* Light Pink */
+}
+.time-work-bg {
+    background-color: #e8f5e9; /* Light Mint Green */
+}
+.tsd-bg { /* Time Speed Distance */
+    background-color: #e3f2fd; /* Light Blue */
+}
+.pipes-bg {
+    background-color: #ede7f6; /* Light Purple */
+}
+.algebra-bg {
+    background-color: #fbe9e7; /* Light Coral */
+}
+.trig-bg { /* Trigonometry */
+    background-color: #e0f2f1; /* Light Teal */
+}
+.geometry-bg {
+    background-color: #fffde7; /* Lighter Yellow */
+}
+.probability-bg {
+    background-color: #f3e5f5; /* Light Lavender */
+}
+.pnc-bg { /* Permutation and Combination */
+    background-color: #f1f8e9; /* Pale Green */
+}
+.age-bg {
+    background-color: #eceff1; /* Light Gray Blue */
+}
+
+
+.nav-links li:hover {
+  color: #3f51b5; /* Elegant blue tone */
+  transition: color 0.3s ease;
+}

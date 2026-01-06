@@ -1,0 +1,291 @@
+/* ---------------------------------------------------- */
+/* --- GLOBAL/BASE STYLES --- */
+/* ---------------------------------------------------- */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7; /* light off-white background */
+}
+
+/* ---------------------------------------------------- */
+/* --- NAVBAR STYLES --- */
+/* ---------------------------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links li:hover {
+  color: #3f51b5; /* Elegant blue tone */
+  transition: color 0.3s ease;
+}
+
+/* Dropdown menu */
+.nav-links .dropdown {
+  position: relative;
+  padding: 0 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+  transition: background 0.2s ease;
+  font-weight: bold;
+}
+
+.dropdown-menu li:hover {
+  background: #f3f3f3;
+  color: #00b894;
+}
+
+/* ---------------------------------------------------- */
+/* --- CHATBOT LINK STYLING --- */
+/* ---------------------------------------------------- */
+
+.chatbot-link {
+  padding: 5px 14px;
+  border-radius: 20px;
+  background-color: rgba(63, 81, 181, 0.1); /* soft bluish tint */
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.chatbot-link a {
+  color: #3f51b5 !important; /* elegant blue tone */
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.chatbot-link:hover {
+  background-color: #3f51b5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.25);
+}
+
+.chatbot-link:hover a {
+  color: white !important;
+}
+
+/* ---------------------------------------------------- */
+/* --- COURSE CARD STYLES --- */
+/* ---------------------------------------------------- */
+
+.course-card {
+  border-radius: 15px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden; 
+  min-height: 250px;
+  background-color: #ffffff;
+}
+
+.course-difficulty {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #555;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.course-icon {
+  width: 100%; 
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; 
+}
+
+.course-icon img {
+  max-width: 100%; 
+  max-height: 100%;
+  object-fit: contain; 
+  width: 180px;
+  height: 180px;
+}
+
+.course-title {
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.page-card-title {
+  font-size: 1.15em; 
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: auto; 
+  padding-top: 15px; 
+  border-top: 1px solid #f0f0f0;
+}
+
+.course-status {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.course-status.available { color: #66bb6a; }
+.course-status.available .status-dot { background-color: #66bb6a; }
+.course-status.in-progress { color: #2196f3; }
+.course-status.in-progress .status-dot { background-color: #2196f3; }
+
+/* ---------------------------------------------------- */
+/* --- COURSE PAGE STRUCTURE --- */
+/* ---------------------------------------------------- */
+
+.course-page-container {
+  padding: 0 0 60px 0;
+  width: 100%; 
+  margin: 0;
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+.main-page-title {
+  font-size: 3em;
+  font-weight: 800;
+  color: #222;
+  padding: 20px 40px; 
+  margin-bottom: 30px;
+}
+
+.course-topic-section {
+  padding: 0 40px; 
+  margin-bottom: 50px;
+}
+
+.topic-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0; 
+  text-transform: uppercase;
+}
+
+.topic-separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+.course-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 25px;
+  box-sizing: border-box;
+}
+
+.course-card .course-subtext {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* ---------------------------------------------------- */
+/* --- RESPONSIVENESS --- */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .course-page-container { padding: 0; }
+  .main-page-title { font-size: 2.5em; padding: 20px; }
+  .course-topic-section { padding: 0 20px; }
+  .course-card-list { grid-template-columns: 1fr; }
+}

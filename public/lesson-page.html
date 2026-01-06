@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson | Talkmate AI</title>
+ 
+    <link rel="stylesheet" href="lesson-page.css">
+</head>
+<body>
+
+    <div id="lesson-app-container">
+        
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/logo.svg" alt="TalkMate AI Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                
+                <li class="dropdown">
+                    Programs
+                    <span class="arrow">▼</span>
+                    <ul class="dropdown-menu">
+                        <li>AI Vocabulary Booster</li>
+                        <li>Group Discussion</li>
+                        <li>HR Questions</li>
+                        <li>Aptitude Questions</li>
+                        <li>Communication Development</li>
+                    </ul>
+                </li>
+                <li><a href="coursepage.html">Courses</a></li>
+                <li><a href="challenge-index.html"></a>Challenge</li>
+                 <li class="chatbot-link"><a href="chatbot.html">Chatbot</a></li>
+            </ul>
+        </nav>
+
+        <div class="lesson-content-wrapper">
+            
+            <div class="header-section">
+                <h1 id="lesson-title">Loading Lesson...</h1> 
+                <button id="tips-btn" class="tips-button">💡 <span id="tips-title">Tips & Tricks</span></button>
+            </div>
+
+            <div class="main-content">
+                <div class="question-section">
+                    <h2>Watch the video and try to answer the questions below</h2>
+                    <ol id="questions-list"></ol>
+                    <p class="instruction" id="instruction-text">It would be great, if you could use the words from Tips & Tricks.</p>
+                    
+                </div>
+                
+                <div class="video-section">
+                    <iframe id="video-frame" width="100%" height="315" 
+                        src="" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="control-bar">
+                <button id="pause-btn" class="control-btn" disabled>Pause</button>
+                <button id="record-btn" class="control-btn record-toggle">🔴 Start Recording</button>
+                <button id="finish-btn" class="control-btn finish-btn" disabled>Finish</button>
+            </div>
+
+            <div id="status-message" class="status-box"></div>
+            <div id="results-display" class="results-box" style="display:none;"></div>
+        </div>
+    </div>
+    
+    <script src="course-content-data.js"></script>
+    <script src="lesson-script.js"></script>
+</body>
+</html>

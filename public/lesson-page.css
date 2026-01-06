@@ -1,0 +1,366 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* FIX: Set the uniform light background color for the entire page */
+    background-color: #f7f7f7; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* Ensure the navbar remains white, as it's defined globally */
+.navbar {
+    /* ... (rest of navbar styles are correct) ... */
+    background: #fff; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.challenge {
+  color: black;
+  font-weight: bold;
+}
+
+/* --- DROPDOWN FIXES --- */
+
+/* Base positioning for the trigger element */
+.nav-links .dropdown {
+  position: relative;
+  padding: 0 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  /* FIX 1: Hide the menu by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* Positioning relative to the Programs link */
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  /* Styling */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+/* FIX 2: Show the menu on hover */
+.nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+  transition: background 0.2s ease;
+  font-weight: bold;
+}
+
+.dropdown-menu li:hover {
+  background: #f3f3f3;
+  color: #00b894;
+}
+
+/* lesson-page.css */
+
+/* --- General Layout and Spacing --- */
+.lesson-content-wrapper {
+   max-width: 1200px;
+    margin: 40px auto; 
+    padding: 0 40px;
+    /* FIX: Ensure this wrapper is transparent or neutral, not fighting the body color */
+    background-color: transparent;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#lesson-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.tips-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.tips-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Main Content Layout (Questions beside Video) --- */
+.main-content {
+    display: flex;
+    gap: 40px; /* Space between questions and video */
+    margin-bottom: 40px;
+}
+
+.question-section {
+    flex: 1; /* Takes up one part of the space */
+    max-width: 45%;
+}
+
+.video-section {
+    flex: 1; /* Takes up the other part of the space */
+    min-width: 50%;
+}
+
+/* Ensure the video iframe fills its container */
+.video-section iframe {
+    width: 100%;
+    /* Keep aspect ratio close to 16:9 */
+    height: 315px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-section h2 {
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.question-section ol {
+    padding-left: 20px;
+}
+
+.question-section li {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: #555;
+    line-height: 1.4;
+}
+
+.instruction {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* --- Control Bar and Button Styling --- */
+.control-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 20px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    position: fixed; /* Fixes bar to bottom of screen */
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.control-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#pause-btn {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.record-toggle {
+    background-color: #cc0000;
+    color: white;
+}
+
+.finish-btn {
+    background-color: #333;
+    color: white;
+}
+
+.control-btn:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+
+/* --- Analysis Results Box Styling (Fixes Overflow) --- */
+
+#status-message {
+    /* Use a clear, large font for status messages */
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* lesson-page.css */
+
+/* --- Analysis Results Box Styling (Make it Smaller and Center It) --- */
+
+#results-display {
+    /* Styles to make the box look clean and structured */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px;
+
+    /* FIX 1: Limit the width of the box to a percentage or fixed pixel value */
+    max-width: 600px; 
+    
+    /* FIX 2: Center the limited-width box on the page */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Ensure no height restriction exists */
+    max-height: none !important; 
+    overflow: visible !important; 
+}
+/* ... keep the rest of the styles below this block ... */
+
+
+
+
+#results-display h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+#results-display p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Style for the hidden transcription text */
+#results-display p:last-child {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.nav-links li:hover {
+  color: #3f51b5; /* Elegant blue tone */
+  transition: color 0.3s ease;
+}
+
+
+.chatbot-link {
+    padding: 5px 14px;
+  border-radius: 20px;
+  background-color: rgba(63, 81, 181, 0.1); /* soft bluish tint */
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style the text inside the link (or the <li> text itself) */
+.chatbot-link a {
+  color: #3f51b5 !important; /* elegant blue tone */
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Add a subtle interactive effect */
+.chatbot-link:hover {
+   background-color: #3f51b5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.25);
+}
+
+.chatbot-link:hover a {
+  color: white !important;
+}
+
+
+
+/* Add this new CSS block to your coursepage.css */
+
+
+
+
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .question-section, .video-section {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .lesson-content-wrapper {
+        padding-bottom: 100px; /* Make space for fixed control bar */
+    }
+    .control-bar {
+        padding: 15px 20px;
+    }
+}

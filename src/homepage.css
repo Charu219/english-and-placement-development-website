@@ -1,0 +1,704 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+.homepage {
+  width: 100%;
+  overflow-x: hidden;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  position: relative;
+ max-width: 600px;
+margin: 0 auto;
+flex-grow: 1;
+justify-content: center;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-links li:hover {
+  color: #3f51b5; /* Elegant blue tone */
+  transition: color 0.3s ease;
+}
+
+.challenge {
+  color: #00b894;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.arrow {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+  color: #222;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+  z-index: 99;
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+  transition: background 0.2s ease;
+  font-weight: bold;
+}
+
+.dropdown-menu li:hover {
+  background: #f3f3f3;
+  color: #00b894;
+}
+
+/* Speaking Test */
+.test-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e3f2fd;
+  padding: 80px 100px; /* Increased vertical and horizontal padding */
+margin: 50px auto; /* Increased margin to step away from edges */
+border-radius: 20px; /* Slightly larger border radius */
+max-width: 1200px; /* Set a maximum width for a better centered appearance */
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.test-content {
+  max-width: 55%;
+  font-weight: bold;
+}
+
+.test-content h2 {
+  margin-bottom: 15px;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.test-content p {
+font-size: 20px; /* Larger paragraph text */
+font-weight: 500; /* Slightly less bold than heading, but still prominent */
+margin-bottom: 30px; /* More space below description */
+}
+
+.test-content ul {
+  text-align: left;
+  margin: 25px 0;
+  padding-left: 0;
+   list-style: none;
+}
+.test-content ul li {
+font-size: 17px; /* Adjusted list item font size */
+margin-bottom: 15px; /* Spacing between list items */
+position: relative;
+padding-left: 30px; /* Space for the custom star icon */
+line-height: 1.4;
+font-weight: 500; /* Make list items slightly bolder */
+}
+.test-content ul li::before {
+content: "⭐"; /* Star emoji as bullet */
+position: absolute;
+left: 0;
+color: #007bff; /* You can change star color if needed, but emoji usually overrides */
+font-size: 20px; /* Size of the star */
+top: 50%;
+transform: translateY(-50%);
+}
+
+.btn {
+ background-color: #212529; /* Darker background like Image 2 button */
+ color: white;
+ padding: 18px 35px; /* Larger padding for a bigger button */
+ border: none;
+ border-radius: 8px; /* Slightly more rounded corners */
+ cursor: pointer;
+ font-size: 18px; /* Larger font size for button text */
+ font-weight: bold;
+ transition: background-color 0.3s ease, transform 0.2s ease;
+ margin-top: 25px; /* Increased margin from the list above */
+}
+
+.btn:hover {
+ background-color: #343a40; /* Slightly lighter on hover */
+ transform: translateY(-2px); /* Slight lift effect */
+}
+
+.test-image {
+    /* Ensure the container itself can flex and the image is centered within it */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Allow the image container to take up more space if available */
+    flex-grow: 1; 
+}
+
+.test-image img {
+ max-width: 100%; /* Allow image to fill its parent container */
+ width: 550px; /* Explicit width to try and force the size */
+ height: auto; /* Maintain aspect ratio */
+border-radius: 8px;
+}
+
+/* Vocabulary Booster */
+.vocab-section {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 70px 90px;
+ margin: 50px auto;
+ background: #f8f9fa; /* Keep the light background */
+ border-radius: 20px;
+ max-width: 1200px;
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+ gap: 40px;
+}
+
+.vocab-content {
+  max-width: 55%;
+  font-weight: bold;
+  color: #222; 
+}
+
+.vocab-content h2 {
+  margin-bottom: 15px;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.vocab-content p {
+ font-size: 20px; /* Matching the size of the Speaking Test paragraph */
+ font-weight: 500; /* Prominent but not heavy */
+ margin-bottom: 30px; 
+}
+
+.vocab-section .btn {
+    /* No need for separate button styles if all buttons use .btn and look the same */
+    margin-top: 25px; 
+}
+
+.vocab-section .vocab-image {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vocab-section img {
+max-width: 100%; /* Ensure it doesn't overflow */
+ width: 350px; /* Kept the original size for the robot as it looks good */
+ height: auto;
+ border-radius: 8px;
+}
+
+
+
+
+/*  & Courses */
+/* Add these styles to your existing HomePage.css file */
+
+/* ===== Courses Section Styles ===== */
+
+.courses-section {
+    padding: 40px;
+    background-color: #f8f9fa; 
+}
+
+.courses-section .section-header {
+    display: flex;
+    justify-content: space-between; /* Aligns "Courses" and "View all" opposite */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px auto; 
+    padding: 0 40px; /* Add padding here so the header aligns with the cards */
+}
+
+/* Fix: Make the "Courses" word BIGGER */
+.courses-section .section-header h3 {
+    font-size: 2.2em; 
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* Fix: Make "View all" blue */
+.courses-section .section-header a {
+    text-decoration: none;
+    color: #007bff; /* Prominent blue color */
+    font-weight: 600;
+    font-size: 1.1em; 
+}
+
+.course-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 40px; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    box-sizing: border-box;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 35px; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden; 
+    min-height: 250px; /* Ensure cards have a minimum height */
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.course-difficulty {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #555;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* Fix: Make the icon container BIGGER */
+.course-icon {
+    width: 130px; 
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+/* Fix: Make the image itself BIGGER inside its container */
+.course-icon img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: contain;
+    transform: scale(1.1); 
+}
+
+.course-title {
+    font-size: 1.25em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: auto; 
+    padding-top: 15px; 
+    border-top: 1px solid #f0f0f0;
+}
+
+.course-status {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Specific status colors */
+.course-status.available { color: #66bb6a; }
+.course-status.available .status-dot { background-color: #66bb6a; }
+
+.course-status.in-progress { color: #2196f3; }
+.course-status.in-progress .status-dot { background-color: #2196f3; }
+
+/* Individual card background colors */
+.course-tv { background-color: #ffffff; }
+.course-microphone { background-color: #fff8e1; }
+.course-interview { background-color: #ffffff; }
+.course-chat { background-color: #e8f5e9; }
+.course-megaphone { background-color: #f3e5f5; }
+.course-briefcase { background-color: #e0f2f7; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Speech Analyzer */
+.speech-section {
+  margin: 50px auto; /* Centered block and increased margin/padding */
+ padding: 50px; /* Base padding for the section */
+ background: #fff;
+ border-radius: 16px;
+ max-width: 1200px;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); 
+}
+
+.speech-tools h3{
+  font-size: 32px; /* Larger heading for prominence */
+ font-weight: 800; /* Extra bold */
+margin-bottom: 10px;
+color: #222;
+}
+
+.speech-section p {
+font-size: 18px; /* Larger paragraph text */
+ font-weight: 500;
+ margin-bottom: 40px; /* More space before the tools */
+color: #555
+}
+
+.speech-tools {
+ display: flex;
+ gap: 30px; /* Increased gap between tool cards */
+  margin-top: 30px;
+ flex-wrap: wrap; /* Allow wrapping on smaller screens */
+ justify-content: center;
+}
+
+
+.speech-tools .card {
+ background: #f9f9f9; /* Light background for cards */
+ border-radius: 16px; /* More rounded corners */
+ padding: 30px; /* Significantly increased padding for larger cards */
+ min-width: 380px; /* Make cards take almost half the width, adjust as needed */
+flex: 1; /* Allow cards to grow and shrink */
+ box-shadow: none; /* Remove previous card shadow */
+display: flex;
+ flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+height: 280px; /* Fixed height for consistent look */
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+cursor: pointer;
+border: 1px solid #eee; /* Light border */
+max-width: calc(50% - 15px);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.speech-tools .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.speech-tools .drop-browse-card {
+  border: 2px dashed #a8c8f5;
+  background-color: #f7fcff;
+}
+
+.speech-tools .card img {
+    width: 80px; /* Size of the icon images */
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.speech-tools .card-main-text {
+    font-size: 24px; /* Larger text for main action */
+    font-weight: bold;
+    color: #333; /* Dark color for main text */
+    margin-bottom: 5px;
+}
+
+.speech-tools .drop-browse-card .card-main-text {
+    color: #007bff; /* Blue color for the main text in drop/browse card */
+}
+
+.speech-tools .card-sub-text {
+    font-size: 14px;
+    color: #6c757d; /* Lighter color for subtext */
+    margin-top: 5px;
+    line-height: 1.3;
+}
+
+.plan-info {
+ margin-top: 50px; /* More space above the plan info */
+ font-size: 16px;
+ padding: 20px; /* Padding inside the box */
+ text-align: center;
+ border-radius: 12px;
+ background: #f0f8ff; /* Light background for the box */
+ /* Gradient border for the plan info box */
+ border: 2px solid transparent; /* Required for background-origin/clip to work */
+ background-image: linear-gradient(white, white), linear-gradient(to right, #8a2be2, #4169e1, #00ced1, #00b894); /* White background, then gradient for border */
+ background-origin: border-box;
+ background-clip: content-box, border-box;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+ line-height: 1.5;
+color: #333; /* Ensure text color is dark */
+}
+
+.pro-plan {
+ color: #007bff; /* Blue color for "Pro plan" */
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .speech-tools .card {
+        max-width: 100%; /* Stack cards vertically on smaller screens */
+        min-width: unset; /* Remove min-width constraint */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+ /* Other Section (Footer) */
+/* Other Section (Footer) */
+.footer {
+  /* No change here, padding is good */
+  padding: 40px; 
+  background-color: #ffffff; 
+}
+
+.footer h4 {
+  font-size: 1.8em;
+  color: #333;
+  /* Reduced bottom margin to bring heading closer to cards */
+  margin-bottom: 20px; 
+  font-weight: bold;
+}
+
+.other-cards {
+  display: flex;
+  /* Kept gap at 25px to match your previous code and the image */
+  gap: 25px; 
+  flex-wrap: wrap;
+  /* Use flex-start to align cards to the left, which looks cleaner */
+  justify-content: flex-start;
+}
+
+.other-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  /* Slightly more subtle shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  /* Reduced padding to make the cards slightly more compact */
+  padding: 25px;
+  /* Adjusted width to ensure it fits perfectly with the 25px gap */
+  width: calc(33.333% - 17px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  /* Removed border to match the clean look of the image */
+  border: none;
+}
+
+.other-card:hover {
+  transform: translateY(-5px);
+  /* Hover shadow is also slightly more subtle */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.icon-wrapper {
+  /* Set a fixed size and aspect ratio for the wrapper */
+  width: 80px; 
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Reduced bottom margin to bring the text closer to the icon */
+  margin-bottom: 15px;
+  overflow: hidden;
+  background-color: #e0f7fa;
+}
+
+.other-icon {
+  /* Increased icon size within the wrapper to fill more space */
+  width: 70%; 
+  height: 70%;
+  object-fit: contain;
+}
+
+.other-title {
+  /* Adjusted font size and weight to match the image's prominence */
+  font-size: 1.25em; 
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 700; /* Bolder to match the image */
+}
+
+.other-description {
+  /* Adjusted font size and line height for better readability */
+  font-size: 0.9em; 
+  color: #666;
+  line-height: 1.5; 
+}
+
+/* Specific background colors for each card to match the image */
+.other-card:nth-child(1) .icon-wrapper {
+  background-color: #cfedfa; /* Light blue for Telegram */
+}
+
+.other-card:nth-child(2) .icon-wrapper {
+  background-color: #e3dffc; /* Light purple for Ideas */
+}
+
+.other-card:nth-child(3) .icon-wrapper {
+  background-color: #ffe0b2; /* Light orange for Invite Friends */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .other-card {
+    width: calc(50% - 13px);
+  }
+}
+
+@media (max-width: 768px) {
+  .other-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Reduced gap for stacked view */
+  }
+  .other-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Add to HomePage.css */
+
+/* --- Chatbot Link Highlight --- */
+
+.chatbot-link {
+    padding: 5px 14px;
+  border-radius: 20px;
+  background-color: rgba(63, 81, 181, 0.1); /* soft bluish tint */
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style the text inside the link (or the <li> text itself) */
+.chatbot-link a {
+  color: #3f51b5 !important; /* elegant blue tone */
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Add a subtle interactive effect */
+.chatbot-link:hover {
+   background-color: #3f51b5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.25);
+}
+
+.chatbot-link:hover a {
+  color: white !important;
+}

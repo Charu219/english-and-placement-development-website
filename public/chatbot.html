@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor Chatbot</title>
+    
+  
+    <link rel="stylesheet" href="chatbot.css"> 
+</head>
+<body>
+
+    <div id="chatbot-page-container">
+        
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/logo.svg" alt="TalkMate AI Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">Programs<span class="arrow">▼</span></li>
+                <li><a href="coursepage.html">Courses</a></li>
+                <li class="challenge"><a href="challenge-index.html">Challenge</a></li>
+                <li class="chatbot-link"><a href="chatbot.html">Chatbot</a></li> 
+            </ul>
+        </nav>
+
+        <div class="chat-main-wrapper">
+            
+            <div id="landing-state" class="chat-landing-state">
+                <h1 class="landing-title">Ask our AI anything</h1>
+                
+                <p class="suggestions-tag">Suggestions on what to ask our AI:</p>
+                
+                <div class="suggestion-buttons-grid">
+                    <button class="suggestion-btn" data-prompt="Correct this sentence and suggest 5 new advanced vocabulary words for it.">Correct grammar and suggest corrected sentence</button>
+                    <button class="suggestion-btn" data-prompt="Solve this aptitude question: Find the value of X where 3X + 5 = 20.">Solve Aptitude</button>
+                    <button class="suggestion-btn" data-prompt="Answer this behavioral interview question: 'Tell me about a time you handled conflict.'">Answer for job interview questions</button>
+                    <button class="suggestion-btn" data-prompt="Suggest main points for a group discussion on 'The impact of social media.'">Suggest main points for group discussion</button>
+                    <button class="suggestion-btn" data-prompt="Find meaning and example usage of new word">Find meaning and example usage of new word</button>
+                </div>
+            </div>
+            
+            <div id="active-chat-interface" class="chat-interface-box" style="display: none;">
+                
+                <div class="central-content-area">
+                    <h1 class="centered-title">Ask our AI anything</h1>
+                </div>
+                
+                <div id="chat-window" class="chat-window">
+                    <div class="ai-message">
+                        <p>Hello! I'm your AI tutor. How can I help you master your English skills or solve an aptitude problem today?</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-area-fixed">
+                    <input type="text" id="user-input" placeholder="Ask me anything about your subjects" autocomplete="off">
+                    <button id="send-btn" class="send-btn">Send</button>
+                </div>
+                
+                <div id="status-message" class="status-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

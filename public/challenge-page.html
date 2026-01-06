@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge | Aptitude Quiz</title>
+    
+   
+    <link rel="stylesheet" href="challenge-page.css">
+</head>
+<body>
+
+    <div id="challenge-app-container">
+        
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/logo.svg" alt="TalkMate AI Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">Programs<span class="arrow">▼</span></li>
+                <li><a href="coursepage.html">Courses</a></li>
+                <li class="challenge"><a href="challenge-page.html">Challenge</a></li>
+                 <li class="chatbot-link"><a href="chatbot.html">Chatbot</a></li>
+               
+            </ul>
+        </nav>
+
+        <div class="challenge-content-wrapper">
+            
+            <h1 id="quiz-title">Loading Quiz...</h1>
+            <p id="question-counter" class="counter-text"></p>
+
+            <div id="quiz-box" class="quiz-box">
+                <h2 id="question-text" class="question-text"></h2>
+                
+                <div id="options-container" class="options-container">
+                    </div>
+
+                <div class="navigation-bar">
+                    <p id="feedback-message" class="feedback-message"></p>
+                    <button id="next-btn" class="next-btn" disabled>Next Question &raquo;</button>
+                </div>
+            </div>
+
+            <div id="results-screen" class="results-screen" style="display:none;">
+                <h2>Challenge Complete!</h2>
+                <p id="final-score"></p>
+                <button onclick="window.location.reload()" class="btn-primary">Try Again</button>
+                <a href="coursepage.html" class="btn-secondary">Back to Courses</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="challenge-data.js"></script>
+    <script src="challenge-script.js"></script>
+</body>
+</html>

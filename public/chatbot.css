@@ -1,0 +1,407 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: linear-gradient(180deg, #fdf2ff 0%, #e9f3ff 100%);
+  min-height: 100vh;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.challenge {
+  color: #00b894;
+  font-weight: bold;
+}
+
+/* --- DROPDOWN FIXES --- */
+
+/* Base positioning for the trigger element */
+.nav-links .dropdown {
+  position: relative;
+  padding: 0 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  /* FIX 1: Hide the menu by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* Positioning relative to the Programs link */
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(10px); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  /* Styling */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 10px 0;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+/* FIX 2: Show the menu on hover */
+.nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+  transition: background 0.2s ease;
+  font-weight: bold;
+}
+
+.dropdown-menu li:hover {
+  background: #f3f3f3;
+  color: #00b894;
+}
+
+
+
+
+
+
+
+
+/* public/chatbot.css */
+
+/* ---------------------------------------------------- */
+/* --- GLOBAL AND NAV BAR STYLES (Base Styling) --- */
+/* ---------------------------------------------------- */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* FIX: Set the entire page background to a uniform light gray-white */
+html, .course-page-container {
+    background-color: #f7f7f7; 
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 40px;
+    background: #fff; /* Navbar background remains white */
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.challenge {
+    color: black;
+    font-weight: bold;
+}
+
+/* --- CHATBOT LINK HIGHLIGHT (Matching Image 2) --- */
+
+.chatbot-link {
+    /* Style the parent list item */
+   padding: 5px 14px;
+  border-radius: 20px;
+  background-color: rgba(63, 81, 181, 0.1); /* soft bluish tint */
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.chatbot-link a {
+  color: #3f51b5 !important; /* elegant blue tone */
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+
+.chatbot-link:hover {
+    background-color: #3f51b5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.25);
+}
+.chatbot-link:hover a {
+  color: white !important;
+}
+
+/* --- DROPDOWN (Necessary styles retained) --- */
+
+.nav-links .dropdown {
+    position: relative;
+    padding: 0 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    /* ... (rest of dropdown styles) ... */
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    /* ... (rest of dropdown hover styles) ... */
+}
+
+
+/* ---------------------------------------------------- */
+/* --- LANDING PAGE STRUCTURE & STYLES --- */
+/* ---------------------------------------------------- */
+
+.chat-main-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: transparent; /* Allows page background to show */
+}
+
+.chat-landing-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+}
+
+.landing-title {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #444;
+    margin-bottom: 50px;
+}
+
+.suggestions-tag {
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.suggestion-buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 700px;
+    margin-top: 20px;
+}
+
+.suggestion-btn {
+    background-color: #f0f3f6;
+    color: #3f51b5; 
+    border: 1px solid #dcdfe4;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-grow: 1;
+    min-width: 180px;
+    text-align: center;
+}
+
+.suggestion-btn:hover {
+    background-color: #e6e9f0;
+    border-color: #3f51b5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ---------------------------------------------------- */
+/* --- ACTIVE CHAT INTERFACE STYLES (After Click) --- */
+/* ---------------------------------------------------- */
+
+#active-chat-interface {
+    /* Main box container */
+    display: none; /* Starts hidden, toggled to flex by JS */
+    flex-direction: column;
+    height: 600px; 
+    max-width: 900px; 
+    margin: 40px auto; 
+    
+    background-color: #ffffff; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
+    overflow: hidden; 
+}
+
+.central-content-area {
+    /* Centers the 'Ask our AI anything' title in the active state */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* --- Chat Window Scrollable Area --- */
+#chat-window {
+    flex-grow: 1;
+    padding: 20px 30px; 
+    overflow-y: auto;
+    background-color: #fafafa; 
+}
+
+/* Message Bubbles (Copied from previous steps) */
+.user-message, .ai-message {
+    max-width: 80%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+    clear: both;
+}
+
+.ai-message {
+    background-color: #e3f2fd; 
+    color: #1a1a1a;
+    float: left;
+    border-bottom-left-radius: 4px;
+}
+
+.user-message {
+    background-color: #3f51b5; 
+    color: white;
+    float: right;
+    border-bottom-right-radius: 4px;
+}
+
+/* --- Input Bar --- */
+.chat-input-area-fixed {
+    width: 100%;
+    padding: 20px 40px; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(240, 240, 240, 0.5));
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+#user-input {
+    flex-grow: 1;
+    max-width: 500px; 
+    padding: 15px 25px; 
+    border: 1px solid #dcdcdc; 
+    border-radius: 35px; 
+    font-size: 1.1em;
+    margin-right: 15px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    outline: none;
+}
+
+.send-btn {
+    background-color: #3f51b5; 
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 35px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+
+.course-page-container {
+    background-color: #fcfcfc; /* A very light, clean off-white */
+    min-height: 100vh;
+    padding-top: 40px; 
+}
+
+/* Ensure the main chat wrapper is transparent so the body color shows through */
+.chat-main-wrapper {
+    background-color: transparent !important; 
+}
+
+/* Navbar must remain white (re-verified from top section) */
+.navbar {
+    background: #fff;
+}
